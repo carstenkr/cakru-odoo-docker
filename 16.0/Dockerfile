@@ -94,6 +94,6 @@ COPY wait-for-psql.py /usr/local/bin/wait-for-psql.py
 
 # Set default user when running the container
 USER odoo
-
+RUN python3 /usr/bin/odoo-bin -d malylive -i web_enterprise --stop-after-init
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["odoo"]
